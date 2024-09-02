@@ -1,0 +1,141 @@
+QUESTÃO - 1 - LINGUAGEM C
+
+#include <stdio.h>
+
+int main() {
+    int indice = 13, soma = 0, k = 0;
+
+    //enquanto k for menor que indice
+    while (k < indice) {
+        k = k + 1;
+        soma = soma + k;
+    } 
+    //imprima o valor de ''soma''
+        printf("O valor de soma e: \n");
+        printf("%d", soma);
+        
+    return 0;
+}
+
+QUESTÃO - 2 - JAVASCRIPT
+
+let numero = 34;
+let a = 0;
+let b = 1;
+let c;
+
+while (c < numero) {
+    c = a + b;
+    a = b;
+    b = c;
+}
+
+if (c == numero) {
+    console.log(`${numero} pertence à sequência.`);
+} else {
+    console.log(`${numero} não pertence à sequência.`);
+}
+
+
+QUESTÃO - 3 - JAVASCRIPT
+
+let faturamentoDiario = [1000, 2000, 1500, 3000, 2500];
+
+let menorValor = faturamentoDiario[0];
+let maiorValor = faturamentoDiario[0];
+let somaTotal = faturamentoDiario[0];
+let diasAcimaDaMedia = 0;
+
+let i = 1;
+while (faturamentoDiario[i] !== undefined) {
+  somaTotal += faturamentoDiario[i];
+
+  if (faturamentoDiario[i] < menorValor) {
+    menorValor = faturamentoDiario[i];
+  }
+
+  if (faturamentoDiario[i] > maiorValor) {
+    maiorValor = faturamentoDiario[i];   
+
+  }
+
+  i++;
+}
+
+let media = somaTotal / i;
+
+i = 0;
+while (faturamentoDiario[i] !== undefined) {
+  if (faturamentoDiario[i] > media) {
+    diasAcimaDaMedia++;
+  }
+  i++;
+}
+
+console.log(`Menor valor de faturamento: ${menorValor}`);
+console.log(`Maior valor de faturamento: ${maiorValor}`);
+console.log(`Dias com faturamento acima da média: ${diasAcimaDaMedia}`);
+
+
+
+QUESTÃO - 4 - JAVASCRIPT
+
+let faturamento = {
+    SP: 67836.43,
+    RJ: 36678.66,
+    MG: 29229.88,
+    ES: 27165.48,
+    Outros: 19849.53
+};
+
+let total = 0;
+let estadoAtual = 'SP';
+
+// faturamento total
+while (estadoAtual) {
+  total += faturamento[estadoAtual];
+
+  if (estadoAtual == 'SP') {
+    estadoAtual = 'RJ';
+  } else if (estadoAtual == 'RJ') {
+    estadoAtual = 'MG';
+  } else if (estadoAtual == 'MG') {
+    estadoAtual = 'ES';
+  } else if (estadoAtual == 'ES') {
+    estadoAtual = 'Outros';
+  } else {
+    estadoAtual = null;
+  }
+}
+
+// percentual
+estadoAtual = 'SP';
+while (estadoAtual) {
+  let percentual = (faturamento[estadoAtual] / total) * 100;
+  console.log(`${estadoAtual}: ${percentual.toFixed(2)}%`);
+
+
+  if (estadoAtual === 'SP') {
+    estadoAtual = 'RJ';
+  } else if (estadoAtual === 'RJ') {
+    estadoAtual = 'MG';
+  } else if (estadoAtual === 'MG') {
+    estadoAtual = 'ES';
+  } else if (estadoAtual === 'ES') {
+    estadoAtual = 'Outros';
+  } else {
+    estadoAtual = null;
+  }
+}
+
+QUESTÃO - 5 - JAVASCRIPT
+
+let minhaString = "Hello, World!";
+let stringInvertida = "";
+let i = minhaString.length - 1;
+
+while (i >= 0) {
+  stringInvertida += minhaString[i];
+  i--;
+}
+console.log(stringInvertida); 
